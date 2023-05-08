@@ -1,8 +1,9 @@
-#include <iostream>
-#include <string>
 /*
+假币问题
  */
 
+#include <iostream>
+#include <string>
 bool IsFake(char c, bool is_light);
 std::string left[3], right[3], res[3];
 
@@ -40,15 +41,18 @@ bool IsFake(char c, bool is_light) {
       if (right_str.find(c) == right_str.npos) {
         return false;
       }
+      break;
     case 'e':
       if (right_str.find(c) != right_str.npos ||
           left_str.find(c) != left_str.npos) {
         return false;
       }
+      break;
     case 'd':
       if (left_str.find(c) == left_str.npos) {
         return false;
       }
+      break;
     }
   }
   return true;
